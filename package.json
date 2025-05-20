@@ -15,6 +15,7 @@
 	},
 	"dependencies": {
 		"@prisma/client": "^5.10.2",
+		"@radix-ui/react-dialog": "^1.1.13",
 		"@radix-ui/react-slot": "^1.2.2",
 		"@react-router/express": "^7.5.3",
 		"@react-router/node": "^7.5.3",
@@ -31,6 +32,7 @@
 		"prisma": "^5.10.2",
 		"react": "^19.1.0",
 		"react-dom": "^19.1.0",
+		"react-resizable-panels": "^3.0.2",
 		"react-router": "^7.5.3",
 		"sonner": "^2.0.3",
 		"tailwind-merge": "^3.3.0"

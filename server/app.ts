@@ -4,6 +4,7 @@ import { PrismaClient } from "@prisma/client";
 import "react-router";
 
 import { DatabaseContext } from "~/database/context";
+import apiRouter from "./routes/route";
 
 declare module "react-router" {
 	interface AppLoadContext {
@@ -19,13 +20,6 @@ const prisma = new PrismaClient();
 app.use((_, __, next) => DatabaseContext.run(prisma, next));
 
 app.use(express.json());
-
-const apiRouter = express.Router();
-apiRouter.use(express.json());
-
-apiRouter.get("/", (req, res) => {
-	res.json({ message: "Hello from Express" });
-});
 
 app.use("/api", apiRouter);
 
