@@ -13,6 +13,7 @@ This is a full-stack application built with React Router, Express, and Prisma. I
 1. Create a `.env` file in the root directory with the following variables:
 
 ```env
+NODE_ENV="development"
 DATABASE_URL="postgresql://username:password@localhost:5432/your_database_name"
 ```
 
