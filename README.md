@@ -1,96 +1,89 @@
-# Welcome to React Router!
+# Snippet Saver
 
-A modern, production-ready template for building full-stack React applications using React Router.
+This is a full-stack application built with React Router, Express, and Prisma. It uses PostgreSQL as the database and includes modern tooling for development.
 
-## Features
+## Prerequisites
 
-- 🚀 Server-side rendering
-- ⚡️ Hot Module Replacement (HMR)
-- 📦 Asset bundling and optimization
-- 🔄 Data loading and mutations
-- 🔒 TypeScript by default
-- 🎉 TailwindCSS for styling
-- 💾 PostgreSQL + DrizzleORM
-- 📖 [React Router docs](https://reactrouter.com/)
+- Node.js (Latest LTS version recommended)
+- PostgreSQL (Latest version)
+- pnpm (recommended) or npm
 
-## Getting Started
+## Environment Setup
 
-### Installation
+1. Create a `.env` file in the root directory with the following variables:
 
-Install the dependencies:
+```env
+DATABASE_URL="postgresql://username:password@localhost:5432/your_database_name"
+```
+
+Replace the DATABASE_URL with your PostgreSQL connection string.
+
+## Database Setup
+
+1. Install dependencies:
 
 ```bash
-npm install
+pnpm install
 ```
 
-### Development
-
-Copy `.env.example` to `.env` and provide a `DATABASE_URL` with your connection string.
-
-Run an initial database migration:
+2. Generate Prisma client:
 
 ```bash
-npm run db:migrate
+pnpm db:generate
 ```
 
-Start the development server with HMR:
+3. Run database migrations:
 
 ```bash
-npm run dev
+pnpm db:migrate
 ```
 
-Your application will be available at `http://localhost:5173`.
-
-## Building for Production
-
-Create a production build:
+4. (Optional) View and manage your database using Prisma Studio:
 
 ```bash
-npm run build
+pnpm db:studio
 ```
 
-## Deployment
+## Development
 
-### Docker Deployment
-
-To build and run using Docker:
+1. Start the development server:
 
 ```bash
-# For npm
-docker build -t my-app .
-
-# Run the container
-docker run -p 3000:3000 my-app
+pnpm dev
 ```
 
-The containerized application can be deployed to any platform that supports Docker, including:
+The server will start on `http://localhost:3000` by default.
 
-- AWS ECS
-- Google Cloud Run
-- Azure Container Apps
-- Digital Ocean App Platform
-- Fly.io
-- Railway
+## Tech Stack
 
-### DIY Deployment
+- **Frontend**: React 19, React Router 7
+- **Backend**: Express, Node.js
+- **Database**: PostgreSQL with Prisma ORM
+- **Styling**: Tailwind CSS
+- **UI Components**: Shadcn UI
+- **State Management**: TanStack Query
+- **Development**: TypeScript, Vite
 
-If you're familiar with deploying Node applications, the built-in app server is production-ready.
-
-Make sure to deploy the output of `npm run build`
+## Project Structure
 
 ```
-├── package.json
-├── package-lock.json (or pnpm-lock.yaml, or bun.lockb)
-├── server.js
-├── build/
-│   ├── client/    # Static assets
-│   └── server/    # Server-side code
+├── prisma/           # Database schema and migrations
+├── src/             # Source code
+│   ├── components/  # React components
+│   ├── routes/      # Route definitions
+│   └── server.js    # Express server
+├── .env            # Environment variables
+└── package.json    # Project dependencies
 ```
 
-## Styling
+## Troubleshooting
 
-This template comes with [Tailwind CSS](https://tailwindcss.com/) already configured for a simple default starting experience. You can use whatever CSS framework you prefer.
+1. If you encounter database connection issues:
 
----
+   - Verify your PostgreSQL server is running
+   - Check your DATABASE_URL in .env file
+   - Ensure the database exists
 
-Built with ❤️ using React Router.
+2. If Prisma commands fail:
+   - Run `pnpm db:generate` to regenerate the Prisma client
+   - Check for any pending migrations
