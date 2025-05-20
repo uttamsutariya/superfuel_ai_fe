@@ -2,6 +2,12 @@
 
 This is a full-stack application built with React Router, Express, and Prisma. It uses PostgreSQL as the database and includes modern tooling for development.
 
+## Screenshots
+
+![Snippet Saver Screenshot 1](/public/ss1.png)
+![Snippet Saver Screenshot 2](/public/ss2.png)
+![Snippet Saver Screenshot 3](/public/ss3.png)
+
 ## Prerequisites
 
 - Node.js (Latest LTS version recommended)
